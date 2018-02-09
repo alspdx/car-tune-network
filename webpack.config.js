@@ -1,6 +1,7 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = {
 
@@ -77,6 +78,7 @@ module.exports = {
       appMountId: 'react-app-root',
       title: 'Car-Tune Network',
       filename: resolve(__dirname, 'build', 'index.html'),
-    })
+    }),
+    new FaviconsWebpackPlugin('./cropped-favicon.png')
   ]
 };
