@@ -10,6 +10,7 @@ function App(){
           --fog: #E7E6E1;
           --cream: #F7F6E7;
           --bayblue: #537791;
+          --deepash: #3f3f3c;
         }
         html {
           box-sizing: border-box;
@@ -19,6 +20,7 @@ function App(){
         }
         body {
           background: var(--fog);
+          color: var(--deepash);
         }
       `}</style>
       <Header />
