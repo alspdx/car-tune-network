@@ -21,6 +21,7 @@ function Body() {
         <Route exact path='/' component={Welcome}/>
         <Route path='/details' component={CarDetails}/>
         <Route path='/newcar' component={NewCar}/>
+        <Route path='/editcar' component={EditCar}/>
         <Route component={Error404}/>
       </Switch>
     </div>

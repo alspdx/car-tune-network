@@ -4,9 +4,15 @@ import React from 'react';
 
 function Error404(props){
   return (
-    <div>
-      <h2>Oops! I'm afraid the page you were trying to visit at {props.location.pathname} does not exist!</h2>
-      <h3>Would you like return <Link to='/'>home</Link>instead?</h3>
+    <div className='error'>
+      <style jsx>{`
+        .error {
+          padding: var(--std-padding);
+        }
+      `}</style>
+      <h2>Oh no! The URL ending with "{props.location.pathname}" does not exist on our server!</h2>
+      <h3>Please try harder next time!</h3>
+      <Link to='/'>Home</Link>
     </div>
   );
 }
