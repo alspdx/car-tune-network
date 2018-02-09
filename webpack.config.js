@@ -79,6 +79,6 @@ module.exports = {
       title: 'Car-Tune Network',
       filename: resolve(__dirname, 'build', 'index.html'),
     }),
-    new FaviconsWebpackPlugin('./cropped-favicon.png')
+    new FaviconsWebpackPlugin('./src/assets/images/cropped-favicon.png')
   ]
 };
