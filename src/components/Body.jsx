@@ -1,5 +1,6 @@
 import CarDetails from './CarDetails';
 import CarsList from './CarsList';
+import EditCar from './EditCar';
 import Error404 from './Error404';
 import NewCar from './NewCar';
 import React from 'react';

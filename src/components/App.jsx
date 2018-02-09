@@ -31,6 +31,9 @@ function App(){
         [data-reactroot] {
           height: 100%;
         }
+        a {
+          text-decoration: none;
+        }
       `}</style>
       <Header />
       <Body />
