@@ -1,3 +1,4 @@
+import CarDetails from './CarDetails';
 import CarsList from './CarsList';
 import Error404 from './Error404';
 import React from 'react';
@@ -14,7 +15,8 @@ function Body() {
       `}</style>
       <CarsList />
       <Switch>
-        <Route path='/' component={Welcome}/>
+        <Route exact path='/' component={Welcome}/>
+        <Route path='/details' component={CarDetails}/>
         <Route component={Error404}/>
       </Switch>
     </div>

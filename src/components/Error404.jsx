@@ -5,7 +5,7 @@ import React from 'react';
 function Error404(props){
   return (
     <div>
-      <h2>Oops! I'm afraid the page you were trying to visit at {props.location.path} does not exist!</h2>
+      <h2>Oops! I'm afraid the page you were trying to visit at {props.location.pathname} does not exist!</h2>
     </div>
   );
 }
