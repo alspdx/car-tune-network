@@ -8,6 +8,8 @@ function CarDetails(props) {
   return(
     <div>
       <h2>{car.year} {car.make} {car.model}</h2>
+      <h4>Owner: {car.customerName}</h4>
+      <p><strong>Reason for service:</strong> {car.reasonForService}</p>
       <Link to={`/editcar/${props.match.params.id}`}>Edit this car</Link>
     </div>
   );
