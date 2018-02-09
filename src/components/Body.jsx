@@ -12,7 +12,7 @@ function Body() {
           display: flex;
         }
       `}</style>
-    <CarsList />
+      <CarsList />
       <Switch>
         <Route path='/' component={Welcome}/>
         <Route component={Error404}/>
