@@ -3,7 +3,15 @@ import React from 'react';
 
 function Welcome() {
   return(
-    <div>
+    <div className='welcome'>
+      <style jsx>{`
+        .welcome {
+          padding: var(--std-padding);
+        }
+        ul {
+          list-style: none;
+        }
+      `}</style>
       <h3>Welcome to Car-Tune Network!</h3>
       <span>Please select a car from the list or an option from the following menu:</span>
       <ul>

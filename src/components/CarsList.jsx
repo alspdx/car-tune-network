@@ -39,6 +39,7 @@ function CarsList() {
           height: 100%;
         }
       `}</style>
+      <h2>Current Inventory:</h2>
       <div>
         {carsInShopList.map((car, index) =>
           <h4 key={index}>{car.year} {car.make} {car.model}</h4>
