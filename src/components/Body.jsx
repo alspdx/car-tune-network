@@ -19,9 +19,9 @@ function Body() {
       <CarsList />
       <Switch>
         <Route exact path='/' component={Welcome}/>
-        <Route path='/details/:id' component={CarDetails}/>
         <Route path='/newcar' component={NewCar}/>
-        <Route path='/editcar' component={EditCar}/>
+        <Route path='/details/:id' component={CarDetails}/>
+        <Route path='/editcar/:id' component={EditCar}/>
         <Route component={Error404}/>
       </Switch>
     </div>
