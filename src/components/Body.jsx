@@ -2,7 +2,7 @@ import Error404 from './Error404';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-function Container() {
+function Body() {
   return(
     <div>
       <Switch>
@@ -12,4 +12,4 @@ function Container() {
   );
 }
 
-export default Container;
+export default Body;

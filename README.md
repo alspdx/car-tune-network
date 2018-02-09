@@ -1,12 +1,12 @@
-# New Project
+# Car-Tune Network
 
-#### An application with unknown purpose _2018_
+#### A vehicle inventory management system for automotive service departments _2018_
 
-#### by **Adam Smith**
+###### by **Adam Smith**
 
 ## Description
 
-This project is a re-imagining and refactor of an Angular project about managing animals in a zoo. This time we're working with a list of cars in an auto shop. The user has the ability to view and edit the details about cars that are in the shop at any given time including shop location (which bay the car is in), year, make, and model of car, reason for the car being in the shop, if the car has been inspected by a mechanic, and any progress that has been made.
+This project is a re-imagining and refactor of an Angular project about managing animals in a zoo. This time we're managing vehicle inventory for an auto repair shop. The user has the ability to view and edit the details about cars that are in the shop at any given time including shop location (which bay the car is in), year, make, and model of car, reason for the car being in the shop, if the car has been inspected by a mechanic, and any progress that has been made.
 
 The layout will be fairly straightforward: The App component will contain a Header and Body component. The Header and body will always be rendered. The Body will include a list of all cars currently in the shop. Another part of the Body will have Routes to view details about the car, edit details about or remove any car, or to add a new car.
 

@@ -1,7 +1,6 @@
 const webpack = require('webpack');
 const { resolve } = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
 
@@ -76,7 +75,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'Waiting Room',
+      title: 'Car-Tune Network',
       filename: resolve(__dirname, 'build', 'index.html'),
     })
   ]

@@ -1,7 +1,7 @@
 {
-  "name": "react-project",
+  "name": "car-tune network",
   "version": "1.0.0",
-  "description": "",
+  "description": "a vehicle inventory management system for automotive service departments",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

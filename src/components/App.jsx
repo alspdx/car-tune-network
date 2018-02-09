@@ -1,4 +1,4 @@
-import Container from './Container';
+import Body from './Container';
 import Header from './Header';
 import React from 'react';
 
@@ -6,7 +6,7 @@ function App(){
   return (
     <div>
       <Header />
-      <Container />
+      <Body />
     </div>
   );
 }
