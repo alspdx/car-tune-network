@@ -35,6 +35,8 @@ function CarsList() {
         .cars-list {
           flex-basis: 20%;
           background: var(--cream);
+          padding: var(--std-padding);
+          height: 100%;
         }
       `}</style>
       <div>

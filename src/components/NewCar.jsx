@@ -2,8 +2,11 @@ import React from 'react';
 
 function NewCar() {
   return(
-    <div>
+    <div className='new-car'>
       <style jsx>{`
+        .new-car {
+          padding: var(--std-padding);
+        }
         form {
           display: flex;
           flex-direction: column;
@@ -13,7 +16,6 @@ function NewCar() {
           flex-direction: column;
           padding-bottom: 20px;
         }
-
       `}</style>
       <h3>New car entry form:</h3>
       <form>

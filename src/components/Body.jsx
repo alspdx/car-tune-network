@@ -12,6 +12,7 @@ function Body() {
       <style jsx>{`
         .body-wrapper {
           display: flex;
+          height: 100%;
         }
       `}</style>
       <CarsList />
