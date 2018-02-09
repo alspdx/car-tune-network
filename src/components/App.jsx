@@ -1,4 +1,4 @@
-import Body from './Container';
+import Body from './Body';
 import Header from './Header';
 import React from 'react';
 

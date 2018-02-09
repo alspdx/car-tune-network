@@ -1,5 +1,5 @@
 {
-  "name": "car-tune network",
+  "name": "car-tune-network",
   "version": "1.0.0",
   "description": "a vehicle inventory management system for automotive service departments",
   "main": "index.js",
