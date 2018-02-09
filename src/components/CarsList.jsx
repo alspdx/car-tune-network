@@ -1,47 +1,6 @@
+import { Link } from 'react-router-dom';
 import React from 'react';
-
-const carsInShopList = [
-  {
-    year: '1977',
-    make: 'Volkswagen',
-    model: 'Rabbit',
-    color: 'White',
-    customerName: 'Joe Blow',
-    reasonForService: ''
-  },
-  {
-    year: '1995',
-    make: 'Volkswagen',
-    model: 'Jetta GLX',
-    color: 'Red',
-    customerName: 'John Doe',
-    reasonForService: ''
-  },
-  {
-    year: '2015',
-    make: 'Volkswagen',
-    model: 'Tiguan',
-    color: 'Silver',
-    customerName: 'Firstname Lastname',
-    reasonForService: ''
-  },
-  {
-    year: '1980',
-    make: 'Audi',
-    model: 'Quattro',
-    color: 'Black',
-    customerName: 'Your Mother',
-    reasonForService: ''
-  },
-  {
-    year: '1987',
-    make: 'Volkswagen',
-    model: 'Vanagon',
-    color: 'Charcoal',
-    customerName: 'Beep Boop',
-    reasonForService: ''
-  },
-];
+import { carsInventory } from './carsInventory';
 
 function CarsList() {
   return(
@@ -56,8 +15,8 @@ function CarsList() {
       `}</style>
       <h2>Current Inventory:</h2>
       <div>
-        {carsInShopList.map((car, index) =>
-          <h4 key={index}>{car.year} {car.make} {car.model}</h4>
+        {carsInventory.map((car, index) =>
+          <h4 key={index}><Link to={`/details/${index}`}>{car.year} {car.make} {car.model}</Link></h4>
         )}
       </div>
     </div>
