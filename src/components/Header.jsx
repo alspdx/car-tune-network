@@ -4,7 +4,10 @@ import React from 'react';
 function Header(){
   return (
     <div>
-      <h1>Title</h1>
+      <h1>KomBuBu</h1>
+      <ul>
+        <li><Link to=''>Home</Link></li>
+      </ul>
     </div>
   );
 }
