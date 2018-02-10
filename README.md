@@ -14,9 +14,22 @@ The layout will be fairly straightforward: The App component will contain a Head
 
 ## Setup
 
+1. Open Terminal or Command Line.
+2. Change directories to where you would like to clone the files.
+3. Run
+`$ git clone https://github.com/alspdx/car-tune-network.git`.
+4. Change directories to the 'car-tune-network' directory.
+5. Run the following in the command line:
+```
+$ npm install
+$ npm run start
+```
+6. The project should be served at `http://localhost:8080/` or another location that will be shown in the Terminal window.
+
 ## Technologies Used:
 * JavaScript
 * React
+* JSX
 * Node.js
 * NPM
 * Webpack
