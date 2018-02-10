@@ -33,8 +33,7 @@ function App(){
         }
         a {
           text-decoration: none;
-        }
-      `}</style>
+        }`}</style>
       <Header />
       <Body />
     </div>

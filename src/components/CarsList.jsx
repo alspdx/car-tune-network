@@ -1,6 +1,6 @@
+import { carsInventory } from './carsInventory';
 import { Link } from 'react-router-dom';
 import React from 'react';
-import { carsInventory } from './carsInventory';
 
 function CarsList() {
   return(
@@ -11,8 +11,7 @@ function CarsList() {
           background: var(--cream);
           padding: var(--std-padding);
           height: 100%;
-        }
-      `}</style>
+        }`}</style>
       <h2>Current Inventory:</h2>
       <div>
         {carsInventory.map((car, index) =>

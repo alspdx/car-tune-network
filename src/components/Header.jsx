@@ -26,8 +26,7 @@ function Header(){
         }
         a {
           color: red;
-        }
-      `}</style>
+        }`}</style>
       <h1>Car-Tune Network</h1>
       <ul>
         <li><Link to='/'>Home</Link></li>

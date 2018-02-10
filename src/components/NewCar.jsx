@@ -6,17 +6,18 @@ function NewCar() {
       <style jsx>{`
         .new-car {
           padding: var(--std-padding);
+          width: 100%;
         }
         form {
           display: flex;
           flex-direction: column;
+          width: 50%;
         }
         label {
           display: flex;
           flex-direction: column;
           padding-bottom: 20px;
-        }
-      `}</style>
+        }`}</style>
       <h3>New car entry form:</h3>
       <form>
         <label>
@@ -42,10 +43,6 @@ function NewCar() {
         <label>
           Reason(s) for service:
           <textarea type='text'/>
-        </label>
-        <label>
-          Make:
-          <input type='text'/>
         </label>
         <input type='submit' value='Submit'/>
       </form>

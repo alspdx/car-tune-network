@@ -10,8 +10,7 @@ function Welcome() {
         }
         ul {
           list-style: none;
-        }
-      `}</style>
+        }`}</style>
       <h3>Welcome to Car-Tune Network!</h3>
       <span>Please select a car from the list or an option from the following menu:</span>
       <ul>

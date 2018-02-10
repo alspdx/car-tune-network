@@ -8,8 +8,7 @@ function Error404(props){
       <style jsx>{`
         .error {
           padding: var(--std-padding);
-        }
-      `}</style>
+        }`}</style>
       <h2>Oh no! The URL ending with "{props.location.pathname}" does not exist on our server!</h2>
       <h3>Please try harder next time!</h3>
       <Link to='/'>Home</Link>

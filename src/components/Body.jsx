@@ -14,8 +14,7 @@ function Body() {
         .body-wrapper {
           display: flex;
           height: 100%;
-        }
-      `}</style>
+        }`}</style>
       <CarsList />
       <Switch>
         <Route exact path='/' component={Welcome}/>
