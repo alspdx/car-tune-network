@@ -66,12 +66,10 @@ class Body extends React.Component {
     this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
   }
 
-  handleEditingVehicleState(key) {
-    const valueKey = key;
-    const carKey = this.state.selectedCar;
+  handleEditingVehicleState(keyToEdit, vehicleKey) {
     return (event) => {
-      const updatedCar = Object.assign({}, this.state.inventoryList[carKey], { [valueKey]: event.target.value });
-      const updatedCarList = Object.assign({}, this.state.inventoryList, { carKey: updatedCar});
+      const updatedCar = Object.assign({}, this.state.inventoryList[vehicleKey], { [keyToEdit]: event.target.value });
+      const updatedCarList = Object.assign({}, this.state.inventoryList, { [vehicleKey]: updatedCar});
       this.setState({ inventoryList: updatedCarList });
     };
   }

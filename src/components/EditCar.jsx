@@ -27,27 +27,27 @@ function EditCar(props) {
       <form>
         <label>
           Year:
-          <input type='text' value={year} onChange={props.onEditingVehicleState('year')} />
+          <input type='text' value={year} onChange={props.onEditingVehicleState('year', props.carKey)} />
         </label>
         <label>
           Make:
-          <input type='text' value={make} onChange={props.onEditingVehicleState('make')} />
+          <input type='text' value={make} onChange={props.onEditingVehicleState('make', props.carKey)} />
         </label>
         <label>
           Model:
-          <input type='text' value={model} onChange={props.onEditingVehicleState('model')} />
+          <input type='text' value={model} onChange={props.onEditingVehicleState('model', props.carKey)} />
         </label>
         <label>
           Color:
-          <input type='text' value={color} onChange={props.onEditingVehicleState('color')} />
+          <input type='text' value={color} onChange={props.onEditingVehicleState('color', props.carKey)} />
         </label>
         <label>
           Customer:
-          <input type='text' value={customerName} onChange={props.onEditingVehicleState('customerName')} />
+          <input type='text' value={customerName} onChange={props.onEditingVehicleState('customerName', props.carKey)} />
         </label>
         <label>
           Reason(s) for service:
-          <textarea type='text' value={reasonForService} onChange={props.onEditingVehicleState('reasonForService')} />
+          <textarea type='text' value={reasonForService} onChange={props.onEditingVehicleState('reasonForService', props.carKey)} />
         </label>
         <input type='submit' value='Submit' />
       </form>
