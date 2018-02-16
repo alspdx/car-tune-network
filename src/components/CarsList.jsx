@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -15,14 +14,15 @@ function CarsList(props) {
       <h2>Current Inventory:</h2>
       {Object.keys(props.inventoryList).map(function(carKey) {
         const thisCar = props.inventoryList[carKey];
-        return <h4 key={carKey}><Link to='/details'>{thisCar.year} {thisCar.make} {thisCar.model}</Link></h4>;
+        return <h4 key={carKey} onClick={(carKey) => {props.onSelectingCar(carKey);}}>{thisCar.year} {thisCar.make} {thisCar.model}</h4>;
       })}
     </div>
   );
 }
 
 CarsList.propTypes = {
-  inventoryList: PropTypes.object
+  inventoryList: PropTypes.object,
+  onSelectingCar: PropTypes.func
 };
 
 export default CarsList;

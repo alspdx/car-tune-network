@@ -12,6 +12,7 @@ class Body extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      selectedCar: null,
       inventoryList: {
         '171ca7fc-66c2-484b-8f26-5da7d36c2199': {
           year: '1977',
@@ -60,6 +61,11 @@ class Body extends React.Component {
         }
       }
     };
+    this.handleSelectingCar = this.handleSelectingCar.bind(this);
+  }
+
+  handleSelectingCar(carKey) {
+    this.setState({selectedCar: carKey});
   }
 
   render() {
@@ -70,11 +76,11 @@ class Body extends React.Component {
               display: flex;
               height: 100%;
             }`}</style>
-        <CarsList inventoryList={this.state.inventoryList} />
+        <CarsList inventoryList={this.state.inventoryList} onSelectingCar={this.handleSelectingCar} />
         <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/newcar' component={NewCar} />
-          <Route path='/details/:id' component={CarDetails} />
+          <Route path='/details' render={() => <CarDetails carToShow={this.state.selectedCar} />} />
           <Route path='/editcar/:id' component={EditCar} />
           <Route component={Error404} />
         </Switch>
