@@ -1,8 +1,9 @@
 import { carsInventory } from './carsInventory';
 import { Link } from 'react-router-dom';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function CarsList() {
+function CarsList(props) {
   return(
     <div className="cars-list">
       <style jsx>{`
@@ -14,12 +15,17 @@ function CarsList() {
         }`}</style>
       <h2>Current Inventory:</h2>
       <div>
-        {carsInventory.map((car, index) =>
-          <h4 key={index}><Link to={`/details/${index}`}>{car.year} {car.make} {car.model}</Link></h4>
+        {Object.keys(props.inventoryList).map((carKey) =>
+          const thisCar = props.inventoryList[carKey]
+          <h4 key={index}><Link to={`/detail`}>{thisCar.year} {thisCar.make} {thisCar.model}</Link></h4>
         )}
       </div>
     </div>
   );
 }
+
+CarsList.propTypes = {
+  inventoryList: PropTypes.object
+};
 
 export default CarsList;

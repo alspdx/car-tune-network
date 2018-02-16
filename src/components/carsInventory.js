@@ -4,6 +4,7 @@ export const carsInventory = [
     make: 'Volkswagen',
     model: 'Rabbit',
     color: 'White',
+    timeEntered: '',
     customerName: 'Joe Blow',
     reasonForService: 'Customer complains of a clunking noise coming from the front driver wheel. Check ball-joint and tie-rod for play, r&r as necessary.',
     serviceNotes: ''
