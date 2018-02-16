@@ -17,11 +17,16 @@ The layout will be fairly straightforward: The App component will contain a Head
 
 ## Notes
 
-A lot of this process felt similar to building an Angular project. Building each piece as a component and routing them together brings back a lot of memories from the old days. The biggest difference so far is that I'm not sure how to pass data. Also the components in React feel a lot smaller than components in Angular. I do like that the React files have everything in one place: logic, styling, and markup. It makes a lot of sense to build that way so we aren't chasing down where each part is when we want to change something about a component. 
+A lot of this process felt similar to building an Angular project. Building each piece as a component and routing them together brings back a lot of memories from the old days. The biggest difference so far is that I'm not sure how to pass data. Also the components in React feel a lot smaller than components in Angular. I do like that the React files have everything in one place: logic, styling, and markup. It makes a lot of sense to build that way so we aren't chasing down where each part is when we want to change something about a component.
 
 One of the biggest hurdles to overcome from the project today was passing the hard-coded data to different components for dynamic routing. In the lessons the data was hard-coded right into the component. Sure, that works ok, but it's limited to the file it is hard coded into. If you were to hard code it into any other files that needed the data, making changes to the data becomes more cumbersome and it isn't not very DRY. To solve the problem I had to put the data in a separate JavaScript (not JSX) file and import it into the components that need the data. Also, when generating a list of cars that would use the same detail component I passed the key into the URL like we did in Angular to use in dot-notation for accessing a particular subset of data in the array of cars in the inventory.
 
 I chose not to link up Sass to this project, even after figuring out how to get it to reliably load with hot-module-replacement, because I found out that variables, or "CSS Custom Properties" as they are named, are totally in vanilla CSS. I'm not sure why I didn't know about that earlier, but it's incredibly straightforward and nullifies 95% of my reasoning for wanting to use Sass with my React project. My friend who is a React dev at Nike told me about another CSS library called Glamorous that builds CSS in JavaScript. His team is using it now because you can use it to style in both ReactJS and React Native.
+
+## Notes from Week 2
+
+Looking at my component tree this morning, I think it will be pretty logical to add state in it's current form. There's one side of the component tree to show the list of cars. This will always be showing as a sort of "sidebar" feature on the page. The other side of the page is where the router will make changes to the display. These changes will take the form of a welcome page with instructions and links to some of the routes, car details panel, add new car form, edit existing car form, and an error 404 page. Since the Body component is the nearest common parent of all of the components needing state, it makes sense to turn Body into a stateful component.
+
 
 ## Setup
 
