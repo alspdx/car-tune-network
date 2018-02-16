@@ -80,7 +80,7 @@ class Body extends React.Component {
         <Switch>
           <Route exact path='/' component={Welcome} />
           <Route path='/newcar' component={NewCar} />
-          <Route path='/details' render={() => <CarDetails carToShow={this.state.selectedCar} />} />
+          <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
           <Route path='/editcar/:id' component={EditCar} />
           <Route component={Error404} />
         </Switch>

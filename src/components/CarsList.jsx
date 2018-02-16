@@ -14,7 +14,7 @@ function CarsList(props) {
       <h2>Current Inventory:</h2>
       {Object.keys(props.inventoryList).map(function(carKey) {
         const thisCar = props.inventoryList[carKey];
-        return <h4 key={carKey} onClick={(carKey) => {props.onSelectingCar(carKey);}}>{thisCar.year} {thisCar.make} {thisCar.model}</h4>;
+        return <h4 key={carKey} onClick={() => {props.onSelectingCar(carKey);}}>{thisCar.year} {thisCar.make} {thisCar.model}</h4>;
       })}
     </div>
   );
