@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import {Link} from 'react-router-dom';
 
 function CarsList(props) {
   return(
@@ -17,7 +18,7 @@ function CarsList(props) {
       <h2>Current Inventory:</h2>
       {Object.keys(props.inventoryList).map(function(carKey) {
         const thisCar = props.inventoryList[carKey];
-        return <h4 key={carKey} onClick={() => {props.onSelectingCar(carKey);}}>{thisCar.year} {thisCar.make} {thisCar.model}</h4>;
+        return <h4 key={carKey} onClick={() => props.onSelectingCar(carKey)}><Link to='/details'>{thisCar.year} {thisCar.make} {thisCar.model}</Link></h4>;
       })}
     </div>
   );
