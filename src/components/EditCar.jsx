@@ -1,9 +1,9 @@
-import { carsInventory } from './carsInventory';
+
 import PropTypes from 'prop-types';
 import React from 'react';
 
 function EditCar(props) {
-  const car = carsInventory[props.match.params.id];
+  const car = props;
   return(
     <div className='edit-car'>
       <style jsx>{`

@@ -10,6 +10,9 @@ function CarsList(props) {
           background: var(--cream);
           padding: var(--std-padding);
           height: 100%;
+        }
+        h4:hover {
+          cursor: pointer;
         }`}</style>
       <h2>Current Inventory:</h2>
       {Object.keys(props.inventoryList).map(function(carKey) {

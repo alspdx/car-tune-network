@@ -4,8 +4,9 @@ import EditCar from './EditCar';
 import Error404 from './Error404';
 import NewCar from './NewCar';
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Welcome from './Welcome';
+import history from './history.js';
 
 class Body extends React.Component {
 
@@ -13,6 +14,7 @@ class Body extends React.Component {
     super(props);
     this.state = {
       selectedCar: null,
+      currentRoute: '/',
       inventoryList: {
         '171ca7fc-66c2-484b-8f26-5da7d36c2199': {
           year: '1977',
@@ -62,6 +64,11 @@ class Body extends React.Component {
       }
     };
     this.handleSelectingCar = this.handleSelectingCar.bind(this);
+    this.handleChangingCurrentRoute = this.handleChangingCurrentRoute.bind(this);
+  }
+
+  handleChangingCurrentRoute(pathName) {
+    this.setState({currentRoute: pathName});
   }
 
   handleSelectingCar(carKey) {
@@ -77,8 +84,12 @@ class Body extends React.Component {
               height: 100%;
             }`}</style>
         <CarsList inventoryList={this.state.inventoryList} onSelectingCar={this.handleSelectingCar} />
-        <Switch>
-          <Route exact path='/' component={Welcome} />
+        <Switch history={history}>
+          {this.state.selectedCar ? (
+            <Route exact path='/' component={Welcome} />
+          ) : (
+            <Redirect from='/' to='/details' />
+          )}
           <Route path='/newcar' component={NewCar} />
           <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
           <Route path='/editcar/:id' component={EditCar} />
