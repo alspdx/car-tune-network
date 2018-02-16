@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 function EditCar(props) {
-  const car = props;
+  const { year, make, model, color, customerName, reasonForService } = props.carToEdit;
+
+  console.log(`this is a ${year}, ${make}, ${model}, ${customerName}, ${reasonForService}`);
   return(
     <div className='edit-car'>
       <style jsx>{`
@@ -21,31 +23,31 @@ function EditCar(props) {
           flex-direction: column;
           padding-bottom: 20px;
         }`}</style>
-      <h1>Edit Car: {car.year} {car.make} {car.model}</h1>
+      <h1>Edit Car: {year} {make} {model}</h1>
       <form>
         <label>
           Year:
-          <input type='text' />
+          <input type='text' value={year} onChange={props.onEditingVehicleState('year')} />
         </label>
         <label>
           Make:
-          <input type='text' />
+          <input type='text' value={make} onChange={props.onEditingVehicleState('make')} />
         </label>
         <label>
           Model:
-          <input type='text' />
+          <input type='text' value={model} onChange={props.onEditingVehicleState('model')} />
         </label>
         <label>
           Color:
-          <input type='text' />
+          <input type='text' value={color} onChange={props.onEditingVehicleState('color')} />
         </label>
         <label>
           Customer:
-          <input type='text' />
+          <input type='text' value={customerName} onChange={props.onEditingVehicleState('customerName')} />
         </label>
         <label>
           Reason(s) for service:
-          <textarea type='text' />
+          <textarea type='text' value={reasonForService} onChange={props.onEditingVehicleState('reasonForService')} />
         </label>
         <input type='submit' value='Submit' />
       </form>
@@ -54,7 +56,9 @@ function EditCar(props) {
 }
 
 EditCar.propTypes = {
-  match: PropTypes.object
+  carToEdit: PropTypes.object,
+  carKey: PropTypes.string,
+  onEditingVehicleState: PropTypes.func
 };
 
 export default EditCar;

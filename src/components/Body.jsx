@@ -63,6 +63,17 @@ class Body extends React.Component {
       }
     };
     this.handleSelectingCar = this.handleSelectingCar.bind(this);
+    this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
+  }
+
+  handleEditingVehicleState(key) {
+    const valueKey = key;
+    const carKey = this.state.selectedCar;
+    return (event) => {
+      const updatedCar = Object.assign({}, this.state.inventoryList[carKey], { [valueKey]: event.target.value });
+      const updatedCarList = Object.assign({}, this.state.inventoryList, { carKey: updatedCar});
+      this.setState({ inventoryList: updatedCarList });
+    };
   }
 
   handleSelectingCar(carKey) {
@@ -82,7 +93,7 @@ class Body extends React.Component {
           <Route exact path='/' component={Welcome} />
           <Route path='/newcar' component={NewCar} />
           <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
-          <Route path='/editcar/' render={() => <EditCar />} />
+          <Route path='/editcar/' render={() => <EditCar onEditingVehicleState={this.handleEditingVehicleState} carToEdit={this.state.inventoryList[this.state.selectedCar]} carKey={this.state.selectedCar} />} />
           <Route component={Error404} />
         </Switch>
       </div>
