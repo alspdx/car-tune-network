@@ -1,4 +1,3 @@
-import { carsInventory } from './carsInventory';
 import { Link } from 'react-router-dom';
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -14,12 +13,10 @@ function CarsList(props) {
           height: 100%;
         }`}</style>
       <h2>Current Inventory:</h2>
-      <div>
-        {Object.keys(props.inventoryList).map((carKey) =>
-          const thisCar = props.inventoryList[carKey]
-          <h4 key={index}><Link to={`/detail`}>{thisCar.year} {thisCar.make} {thisCar.model}</Link></h4>
-        )}
-      </div>
+      {Object.keys(props.inventoryList).map(function(carKey) {
+        const thisCar = props.inventoryList[carKey];
+        return <h4 key={carKey}><Link to='/details'>{thisCar.year} {thisCar.make} {thisCar.model}</Link></h4>;
+      })}
     </div>
   );
 }

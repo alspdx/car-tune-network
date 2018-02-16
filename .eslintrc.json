@@ -32,7 +32,6 @@
       "afterOpening": "never",
       "beforeClosing": "never"
     }],
-
     "react/jsx-indent-props": [
       "error",
       2
