@@ -2,12 +2,23 @@ import CarDetails from './CarDetails';
 import CarsList from './CarsList';
 import EditCar from './EditCar';
 import Error404 from './Error404';
+import { masterFirebaseConfig } from './../api-keys';
 import NewCar from './NewCar';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { v4 } from 'uuid';
 import Welcome from './Welcome';
+import firebase from 'firebase';
+import Rebase from 're-base';
 
+export const firebaseConfig = {
+  apiKey: masterFirebaseConfig.apiKey,
+  authDomain: masterFirebaseConfig.authDomain,
+  databaseURL: masterFirebaseConfig.databaseURL,
+  storageBucket: masterFirebaseConfig.storageBucket
+};
+var app = firebase.initializeApp(firebaseConfig);
+const base = Rebase.createClass(app.database());
 
 class Body extends React.Component {
 
@@ -62,6 +73,13 @@ class Body extends React.Component {
     this.handleDeletingVehicle = this.handleDeletingVehicle.bind(this);
     this.handleNewVehicleSubmit = this.handleNewVehicleSubmit.bind(this);
     this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
+  }
+
+  componentWillMount() {
+    base.syncState('inventoryList', {
+      context: this,
+      state: 'inventoryList'
+    });
   }
 
   handleNewVehicleSubmit(carToSubmit) {

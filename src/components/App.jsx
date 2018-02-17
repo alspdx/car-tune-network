@@ -33,6 +33,7 @@ function App() {
         }
         a {
           text-decoration: none;
+          color: var(--deepash);
         }`}</style>
       <Header />
       <Body />
