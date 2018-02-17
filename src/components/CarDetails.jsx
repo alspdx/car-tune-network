@@ -10,7 +10,7 @@ function CarDetails(props) {
         .car-details {
           padding: var(--std-padding);
           width: 100%;
-      }`}</style>
+        }`}</style>
       {props.carToShow ? (
         <div>
           <h2>{year} {make} {model}</h2>

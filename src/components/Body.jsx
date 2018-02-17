@@ -22,8 +22,7 @@ class Body extends React.Component {
           model: 'Rabbit',
           color: 'White',
           customerName: 'Joe Blow',
-          reasonForService: 'Customer complains of a clunking noise coming from the front driver wheel. Check ball-joint and tie-rod for play, r&r as necessary.',
-          serviceNotes: []
+          reasonForService: 'Customer complains of a clunking noise coming from the front driver wheel. Check ball-joint and tie-rod for play, r&r as necessary.'
         },
         '5447aaa0-5d29-4303-bdd2-f793c5bee18b': {
           year: '1995',
@@ -31,8 +30,7 @@ class Body extends React.Component {
           model: 'Jetta GLX',
           color: 'Red',
           customerName: 'John Doe',
-          reasonForService: 'Car is due for 80k service. Parts on order for timing chain, clutch, rear-main seal, transaxle seal, clutch, pressure plate, throw-out bearing and pushrod, spark plugs, spark plug wires, fuel filter, oil filter, air filter, cabin air filter.',
-          serviceNotes: []
+          reasonForService: 'Car is due for 80k service. Parts on order for timing chain, clutch, rear-main seal, transaxle seal, clutch, pressure plate, throw-out bearing and pushrod, spark plugs, spark plug wires, fuel filter, oil filter, air filter, cabin air filter.'
         },
         '3d92905a-62c3-4376-834e-c6b75032deba': {
           year: '2015',
@@ -40,8 +38,7 @@ class Body extends React.Component {
           model: 'Tiguan',
           color: 'Silver',
           customerName: 'Firstname Lastname',
-          reasonForService: 'Oil change, full synthetic 5w-40.',
-          serviceNotes: []
+          reasonForService: 'Oil change, full synthetic 5w-40.'
         },
         '566db0bd-2bd0-4892-a842-846ccef81cde': {
           year: '1980',
@@ -49,8 +46,7 @@ class Body extends React.Component {
           model: 'Quattro',
           color: 'Black',
           customerName: 'Your Mother',
-          reasonForService: 'Scheduled pre-purchase inspection, customer or current owner will drop car and keys off by 10:30am.',
-          serviceNotes: []
+          reasonForService: 'Scheduled pre-purchase inspection, customer or current owner will drop car and keys off by 10:30am.'
         },
         '8dcae779-7d0d-4a76-ad20-fad06dc6d59a': {
           year: '1987',
@@ -58,8 +54,7 @@ class Body extends React.Component {
           model: 'Vanagon',
           color: 'Dark Gray',
           customerName: 'Beep Boop',
-          reasonForService: 'Does not pass DEQ, may need full tune-up.',
-          serviceNotes: []
+          reasonForService: 'Does not pass DEQ, may need full tune-up.'
         }
       }
     };
@@ -103,21 +98,13 @@ class Body extends React.Component {
           .body-wrapper {
             display: flex;
             height: 100%;
-        }`}</style>
-        <CarsList
-          inventoryList={this.state.inventoryList}
-          onSelectingCar={this.handleSelectingCar} />
+          }`}</style>
+        <CarsList inventoryList={this.state.inventoryList} onSelectingCar={this.handleSelectingCar} />
         <Switch>
           <Route exact path='/' component={Welcome} />
-          <Route path='/newcar' render={() => <NewCar
-            onNewVehicleSubmit={this.handleNewVehicleSubmit} />} />
-          <Route path='/details' render={() => <CarDetails
-            carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
-          <Route path='/editcar' render={() =><EditCar
-            onEditingVehicleState={this.handleEditingVehicleState}
-            carToEdit={this.state.inventoryList[this.state.selectedCar]}
-            onDeletingVehicle={this.handleDeletingVehicle}
-            carKey={this.state.selectedCar} />} />
+          <Route path='/newcar' render={() => <NewCar onNewVehicleSubmit={this.handleNewVehicleSubmit} />} />
+          <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
+          <Route path='/editcar' render={() =><EditCar onEditingVehicleState={this.handleEditingVehicleState} carToEdit={this.state.inventoryList[this.state.selectedCar]} onDeletingVehicle={this.handleDeletingVehicle} carKey={this.state.selectedCar} />} />
           <Route component={Error404} />
         </Switch>
       </div>
