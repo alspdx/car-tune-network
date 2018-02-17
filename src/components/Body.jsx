@@ -64,6 +64,15 @@ class Body extends React.Component {
     };
     this.handleSelectingCar = this.handleSelectingCar.bind(this);
     this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
+    this.handleDeletingVehicle = this.handleDeletingVehicle.bind(this);
+  }
+
+  handleDeletingVehicle(carKey) {
+    if (confirm(`Are you sure you want to delete this ${this.state.inventoryList[carKey].year} ${this.state.inventoryList[carKey].make} ${this.state.inventoryList[carKey].model}?`)) {
+      let updatedCarList = this.state.inventoryList;
+      delete updatedCarList[carKey];
+      this.setState({ inventoryList: updatedCarList });
+    }
   }
 
   handleEditingVehicleState(keyToEdit, vehicleKey) {
@@ -91,7 +100,11 @@ class Body extends React.Component {
           <Route exact path='/' component={Welcome} />
           <Route path='/newcar' component={NewCar} />
           <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
-          <Route path='/editcar/' render={() => <EditCar onEditingVehicleState={this.handleEditingVehicleState} carToEdit={this.state.inventoryList[this.state.selectedCar]} carKey={this.state.selectedCar} />} />
+          <Route path='/editcar' render={() =>
+            <EditCar onEditingVehicleState={this.handleEditingVehicleState}
+              carToEdit={this.state.inventoryList[this.state.selectedCar]}
+              carKey={this.state.selectedCar}
+              onDeletingVehicle={this.handleDeletingVehicle} />} />
           <Route component={Error404} />
         </Switch>
       </div>

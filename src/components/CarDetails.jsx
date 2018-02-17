@@ -1,5 +1,4 @@
-
-
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 
@@ -17,6 +16,7 @@ function CarDetails(props) {
           <h2>{year} {make} {model}</h2>
           <h4>Owner: {customerName}</h4>
           <p><strong>Reason for service:</strong> {reasonForService}</p>
+          <Link to='/editcar'>Edit Car</Link>
         </div>
       ) : (
         <h2>Please select a vehicle from the list to see details.</h2>
