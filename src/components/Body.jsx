@@ -5,6 +5,7 @@ import Error404 from './Error404';
 import NewCar from './NewCar';
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { v4 } from 'uuid';
 import Welcome from './Welcome';
 
 
@@ -65,6 +66,13 @@ class Body extends React.Component {
     this.handleSelectingCar = this.handleSelectingCar.bind(this);
     this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
     this.handleDeletingVehicle = this.handleDeletingVehicle.bind(this);
+    this.handleNewVehicleSubmit = this.handleNewVehicleSubmit.bind(this);
+  }
+
+  handleNewVehicleSubmit(carToSubmit) {
+    const newCarKey = v4();
+    let updatedCarList = Object.assign({}, this.state.inventoryList, { [newCarKey]: carToSubmit });
+    this.setState({ inventoryList: updatedCarList });
   }
 
   handleDeletingVehicle(carKey) {
@@ -98,13 +106,13 @@ class Body extends React.Component {
         <CarsList inventoryList={this.state.inventoryList} onSelectingCar={this.handleSelectingCar} />
         <Switch>
           <Route exact path='/' component={Welcome} />
-          <Route path='/newcar' component={NewCar} />
+          <Route path='/newcar' render={() => <NewCar onNewVehicleSubmit={this.handleNewVehicleSubmit} />} />
           <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
           <Route path='/editcar' render={() =>
             <EditCar onEditingVehicleState={this.handleEditingVehicleState}
               carToEdit={this.state.inventoryList[this.state.selectedCar]}
-              carKey={this.state.selectedCar}
-              onDeletingVehicle={this.handleDeletingVehicle} />} />
+              onDeletingVehicle={this.handleDeletingVehicle}
+              carKey={this.state.selectedCar} />} />
           <Route component={Error404} />
         </Switch>
       </div>
