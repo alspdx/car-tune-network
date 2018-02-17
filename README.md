@@ -25,8 +25,13 @@ I chose not to link up Sass to this project, even after figuring out how to get 
 
 ## Notes from Week 2
 
+_8:45am_
 Looking at my component tree this morning, I think it will be pretty logical to add state in it's current form. There's one side of the component tree to show the list of cars. This will always be showing as a sort of "sidebar" feature on the page. The other side of the page is where the router will make changes to the display. These changes will take the form of a welcome page with instructions and links to some of the routes, car details panel, add new car form, edit existing car form, and an error 404 page. Since the Body component is the nearest common parent of all of the components needing state, it makes sense to turn Body into a stateful component.
 
+_4:30pm_
+I spent a long long time (way too long) trying to figure out how I could get React Router to navigate to a different path inside of a function after clicking on a car in the list since calling a callback function from a link was not working. After banging my head against a wall for two hours I was able to get the path to load into the address bar, but the view was not updating to the new route. I think this is because I'm using <Switch> instead of <Router>, but the documentation is difficult to navigate and doesn't seem to be very helpful. I ended deciding it would be easier to write up a function to pass the key of the car selected into a state property and use a link nested inside that div to navigate to a details component where the car was.
+
+On a lighter note, after a few hours of research, trial and error I did manage to find a method to get two way data binding very much like we did in Angular with the [(ngModel)] for updating the properties of the cars in the list. I'll also be adding a method to add new cars sometime in the near future. Success!
 
 ## Setup
 
