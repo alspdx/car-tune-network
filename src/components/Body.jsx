@@ -64,9 +64,9 @@ class Body extends React.Component {
       }
     };
     this.handleSelectingCar = this.handleSelectingCar.bind(this);
-    this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
     this.handleDeletingVehicle = this.handleDeletingVehicle.bind(this);
     this.handleNewVehicleSubmit = this.handleNewVehicleSubmit.bind(this);
+    this.handleEditingVehicleState = this.handleEditingVehicleState.bind(this);
   }
 
   handleNewVehicleSubmit(carToSubmit) {
@@ -80,15 +80,16 @@ class Body extends React.Component {
       let updatedCarList = this.state.inventoryList;
       delete updatedCarList[carKey];
       this.setState({ inventoryList: updatedCarList });
+      this.setState({ selectedCar: null });
     }
   }
 
-  handleEditingVehicleState(keyToEdit, vehicleKey) {
-    return (event) => {
-      const updatedCar = Object.assign({}, this.state.inventoryList[vehicleKey], { [keyToEdit]: event.target.value });
-      const updatedCarList = Object.assign({}, this.state.inventoryList, { [vehicleKey]: updatedCar});
-      this.setState({ inventoryList: updatedCarList });
-    };
+  handleEditingVehicleState(event) {
+    const key = event.target.name;
+    const value = event.target.value;
+    const updatedCar = Object.assign({}, this.state.inventoryList[this.state.selectedCar], { [key]: value });
+    const updatedCarList = Object.assign({}, this.state.inventoryList, { [this.state.selectedCar]: updatedCar});
+    this.setState({ inventoryList: updatedCarList });
   }
 
   handleSelectingCar(carKey) {
@@ -99,20 +100,24 @@ class Body extends React.Component {
     return(
       <div className="body-wrapper">
         <style jsx>{`
-            .body-wrapper {
-              display: flex;
-              height: 100%;
-            }`}</style>
-        <CarsList inventoryList={this.state.inventoryList} onSelectingCar={this.handleSelectingCar} />
+          .body-wrapper {
+            display: flex;
+            height: 100%;
+        }`}</style>
+        <CarsList
+          inventoryList={this.state.inventoryList}
+          onSelectingCar={this.handleSelectingCar} />
         <Switch>
           <Route exact path='/' component={Welcome} />
-          <Route path='/newcar' render={() => <NewCar onNewVehicleSubmit={this.handleNewVehicleSubmit} />} />
-          <Route path='/details' render={() => <CarDetails carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
-          <Route path='/editcar' render={() =>
-            <EditCar onEditingVehicleState={this.handleEditingVehicleState}
-              carToEdit={this.state.inventoryList[this.state.selectedCar]}
-              onDeletingVehicle={this.handleDeletingVehicle}
-              carKey={this.state.selectedCar} />} />
+          <Route path='/newcar' render={() => <NewCar
+            onNewVehicleSubmit={this.handleNewVehicleSubmit} />} />
+          <Route path='/details' render={() => <CarDetails
+            carToShow={this.state.inventoryList[this.state.selectedCar]} />} />
+          <Route path='/editcar' render={() =><EditCar
+            onEditingVehicleState={this.handleEditingVehicleState}
+            carToEdit={this.state.inventoryList[this.state.selectedCar]}
+            onDeletingVehicle={this.handleDeletingVehicle}
+            carKey={this.state.selectedCar} />} />
           <Route component={Error404} />
         </Switch>
       </div>

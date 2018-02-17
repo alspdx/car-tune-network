@@ -26,27 +26,27 @@ function EditCar(props) {
           <h1>Edit Car: {props.carToEdit.year} {props.carToEdit.make} {props.carToEdit.model}</h1>
           <label>
             Year:
-            <input type='number' min='1885' max='2019' value={props.carToEdit.year} onChange={props.onEditingVehicleState('year', props.carKey)} />
+            <input type='number' name='year' min='1885' max='2019' value={props.carToEdit.year} onChange={props.onEditingVehicleState} />
           </label>
           <label>
             Make:
-            <input type='text' value={props.carToEdit.make} onChange={props.onEditingVehicleState('make', props.carKey)} />
+            <input type='text' name='make' value={props.carToEdit.make} onChange={props.onEditingVehicleState} />
           </label>
           <label>
             Model:
-            <input type='text' value={props.carToEdit.model} onChange={props.onEditingVehicleState('model', props.carKey)} />
+            <input type='text' name='model' value={props.carToEdit.model} onChange={props.onEditingVehicleState} />
           </label>
           <label>
             Color:
-            <input type='text' value={props.carToEdit.color} onChange={props.onEditingVehicleState('color', props.carKey)} />
+            <input type='text' name='color' value={props.carToEdit.color} onChange={props.onEditingVehicleState} />
           </label>
           <label>
             Customer:
-            <input type='text' value={props.carToEdit.customerName} onChange={props.onEditingVehicleState('customerName', props.carKey)} />
+            <input type='text' name='customerName' value={props.carToEdit.customerName} onChange={props.onEditingVehicleState} />
           </label>
           <label>
             Reason(s) for service:
-            <textarea type='text' value={props.carToEdit.reasonForService} onChange={props.onEditingVehicleState('reasonForService', props.carKey)} />
+            <textarea type='text' name='reasonForService' value={props.carToEdit.reasonForService} onChange={props.onEditingVehicleState} />
           </label>
           <button type='submit'>Submit</button>
           <button onClick={() => props.onDeletingVehicle(props.carKey)}>Delete this vehicle</button>
