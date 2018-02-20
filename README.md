@@ -78,6 +78,8 @@ $ npm run start
 * NPM
 * Webpack
 * Babel
+* Firebase
+* Re-Base
 
 ## License
 
