@@ -49,7 +49,8 @@ class Body extends React.Component {
   }
 
   handleDeletingVehicle(carKey) {
-    if (confirm(`Are you sure you want to delete this ${this.state.inventoryList[carKey].year} ${this.state.inventoryList[carKey].make} ${this.state.inventoryList[carKey].model}?`)) {
+    const { year, make, model } = this.state.inventoryList[carKey];
+    if (confirm(`Are you sure you want to delete this ${year} ${make} ${model}?`)) {
       let updatedCarList = this.state.inventoryList;
       delete updatedCarList[carKey];
       this.setState({ selectedCar: null });

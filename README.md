@@ -47,6 +47,29 @@ $ npm run start
 ```
 6. The project should be served at `http://localhost:8080/` or another location that will be shown in the Terminal window.
 
+## Database Setup
+
+  1. Visit the [Firebase](https://firebase.google.com/) website.
+  2. Login with your Google account (or create one before logging in if you don't already have a Google account).
+  3. Click the "Add project" button.
+  4. Create a name for the project and click the "Create project" button.
+  5. Click the "Database" tab in the menu on the left hand side of the page.
+  6. Click the "Get Started" button to initialize your Firebase database.
+  7. Click the "Project Overview" link at the top-left of the page.
+  8. Click the "Add Firebase to your web app" button.
+  9. Copy the apiKey, authDomain, databaseURL, projectId, and storageBucket key/value pairs.
+  10. Finally add the following export statement beneath the api-keys export in the "api-keys.js" file with your Firebase configuration properties where they belong. The configuration is already linked to an import statement in the application files so no other steps are necessary.
+
+  ```
+  export const masterFirebaseConfig = {
+    apiKey: "{{yourApiKeyHere}}",
+    authDomain: "{{yourAuthDomainHere}}",
+    databaseURL: "{{yourDatabaseURLHere}}",
+    projectId: "{{yourProjectIdHere}}",
+    storageBucket: "{{yourStorageBucketHere}}"
+  }
+  ```
+
 ## Technologies Used:
 * JavaScript
 * React
