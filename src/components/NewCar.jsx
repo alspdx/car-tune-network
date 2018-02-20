@@ -17,7 +17,14 @@ function NewCar(props) {
       model: model.value,
       color: color.value,
       customerName: customerName.value,
-      reasonForService: reasonForService.value });
+      reasonForService: reasonForService.value
+    });
+    year.value = '';
+    make.value = '';
+    model.value = '';
+    color.value = '';
+    customerName.value = '';
+    reasonForService.value = '';
   }
 
   return(
